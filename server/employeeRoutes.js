@@ -1,8 +1,7 @@
 const express = require("express");
 const router = express.Router();
+const { getEmployees } = require("./employeeController");
 
-router.get("/", (req, res) => {
-  res.send("Employee Route Working");
-});
+router.get("/", getEmployees);
 
 module.exports = router;
