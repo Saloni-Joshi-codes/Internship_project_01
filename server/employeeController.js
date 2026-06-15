@@ -16,7 +16,18 @@ const getEmployeeById = (req, res) => {
 
     res.json(employee);
 };
+const createEmployee = (req, res) => {
+  const newEmployee = req.body;
+
+  employees.push(newEmployee);
+
+  res.status(201).json({
+    message: "Employee created successfully",
+    employee: newEmployee
+  });
+};
 module.exports = {
   getEmployees,
-  getEmployeeById
+  getEmployeeById,
+  createEmployee
 };
