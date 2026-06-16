@@ -26,8 +26,21 @@ const createEmployee = (req, res) => {
     employee: newEmployee
   });
 };
+const updateEmployee = (req, res) => {
+  res.json({
+    message: "Update Employee API Working"
+  });
+};
+const deleteEmployee = (req, res) => {
+  res.json({
+    message: "Delete Employee API Working"
+  });
+};
+
 module.exports = {
   getEmployees,
   getEmployeeById,
-  createEmployee
+  createEmployee,
+  updateEmployee,
+  deleteEmployee
 };
