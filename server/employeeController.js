@@ -27,9 +27,24 @@ const createEmployee = (req, res) => {
   });
 };
 const updateEmployee = (req, res) => {
-  res.json({
-    message: "Update Employee API Working"
-  });
+    const employee = employees.find(
+        emp => emp.employeeId === req.params.id
+    );
+
+    if (!employee) {
+        return res.status(404).json({
+            message: "Employee not found"
+        });
+    }
+    console.log(req.body);
+    employee.fullName = req.body.fullName || employee.fullName;
+    employee.department = req.body.department || employee.department;
+    employee.salary = req.body.salary || employee.salary;
+
+    res.json({
+        message: "Employee updated successfully",
+        employee
+    });
 };
 const deleteEmployee = (req, res) => {
   res.json({
