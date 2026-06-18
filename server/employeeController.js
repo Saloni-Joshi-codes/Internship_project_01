@@ -18,7 +18,13 @@ const getEmployeeById = (req, res) => {
 };
 const createEmployee = (req, res) => {
   const newEmployee = req.body;
+  const { employeeId, fullName, department, salary } = req.body;
 
+  if (!employeeId || !fullName || !department || !salary) {
+    return res.status(400).json({
+        message: "All fields are required"
+    });
+}
   employees.push(newEmployee);
 
   res.status(201).json({
