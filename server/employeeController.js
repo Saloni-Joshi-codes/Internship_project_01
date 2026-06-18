@@ -47,9 +47,21 @@ const updateEmployee = (req, res) => {
     });
 };
 const deleteEmployee = (req, res) => {
-  res.json({
-    message: "Delete Employee API Working"
-  });
+    const employeeIndex = employees.findIndex(
+        emp => emp.employeeId === req.params.id
+    );
+
+    if (employeeIndex === -1) {
+        return res.status(404).json({
+            message: "Employee not found"
+        });
+    }
+
+    employees.splice(employeeIndex, 1);
+
+    res.json({
+        message: "Employee deleted successfully"
+    });
 };
 
 module.exports = {
