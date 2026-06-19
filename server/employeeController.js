@@ -42,6 +42,13 @@ const updateEmployee = (req, res) => {
             message: "Employee not found"
         });
     }
+    const { fullName, department, salary } = req.body || {};
+
+    if (!fullName && !department && !salary) {
+       return res.status(400).json({
+       message: "At least one field is required for update"
+      });
+    }
     console.log(req.body);
     employee.fullName = req.body.fullName || employee.fullName;
     employee.department = req.body.department || employee.department;
