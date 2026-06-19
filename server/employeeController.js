@@ -84,3 +84,13 @@ module.exports = {
   updateEmployee,
   deleteEmployee
 };
+const getAllEmployees = (req, res) => {
+  res.json(employees);
+};
+module.exports = {
+  getEmployeeById,
+  createEmployee,
+  updateEmployee,
+  deleteEmployee,
+  getAllEmployees
+};
