@@ -10,8 +10,9 @@ const getEmployeeById = (req, res) => {
 
     if (!employee) {
         return res.status(404).json({
-            message: "Employee not found"
-        });
+  message: "Employee not found",
+  employeeId: req.params.id
+});
     }
 
     res.json(employee);
