@@ -77,21 +77,26 @@ const deleteEmployee = (req, res) => {
         message: "Employee deleted successfully"
     });
 };
+const getEmployeesByDepartment = (req, res) => {
+  const department = req.query.department;
 
+  const filteredEmployees = employees.filter(
+    (emp) =>
+      emp.department.toLowerCase() === department.toLowerCase()
+  );
+
+  res.json(filteredEmployees);
+};
+
+const getAllEmployees = (req, res) => {
+  res.json(employees);
+};
 module.exports = {
   getEmployees,
   getEmployeeById,
   createEmployee,
   updateEmployee,
-  deleteEmployee
-};
-const getAllEmployees = (req, res) => {
-  res.json(employees);
-};
-module.exports = {
-  getEmployeeById,
-  createEmployee,
-  updateEmployee,
   deleteEmployee,
+  getEmployeesByDepartment,
   getAllEmployees
 };
