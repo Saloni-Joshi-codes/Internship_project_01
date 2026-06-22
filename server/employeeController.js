@@ -87,7 +87,15 @@ const getEmployeesByDepartment = (req, res) => {
 
   res.json(filteredEmployees);
 };
+const getEmployeesBySalary = (req, res) => {
+    const minSalary = Number(req.query.minSalary);
 
+    const filteredEmployees = employees.filter(
+        emp => emp.salary >= minSalary
+    );
+
+    res.json(filteredEmployees);
+};
 const getAllEmployees = (req, res) => {
   res.json(employees);
 };
@@ -98,5 +106,6 @@ module.exports = {
   updateEmployee,
   deleteEmployee,
   getEmployeesByDepartment,
+  getEmployeesBySalary,
   getAllEmployees
 };
