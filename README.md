@@ -14,3 +14,11 @@ Week 1 Goals:
 - Authentication
 - JWT Security
 - Role Based Access
+
+## Payroll Module
+
+Features:
+- Payroll data model
+- Employee salary tracking
+- Bonus and deduction management
+- Net salary calculation
