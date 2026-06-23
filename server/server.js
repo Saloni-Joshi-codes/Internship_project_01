@@ -1,6 +1,6 @@
 const express = require("express");
 const employeeRoutes = require("./employeeRoutes");
-
+const authRoutes = require("./routes/authRoutes");
 const app = express();
 app.use(express.json());
 app.get("/", (req, res) => {
@@ -8,7 +8,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/employees", employeeRoutes);
-
+app.use("/auth", authRoutes);
 const PORT = 5000;
 
 app.listen(PORT, () => {
