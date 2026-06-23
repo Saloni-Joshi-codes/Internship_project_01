@@ -22,3 +22,21 @@ Features:
 - Employee salary tracking
 - Bonus and deduction management
 - Net salary calculation
+
+## Authentication API
+
+POST /auth/login
+
+Request:
+
+{
+  "email": "admin@email.com",
+  "password": "123456"
+}
+
+Response:
+
+{
+  "message": "Login successful",
+  "token": "JWT_TOKEN"
+}
