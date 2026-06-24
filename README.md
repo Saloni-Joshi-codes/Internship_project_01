@@ -8,20 +8,34 @@ Technology Stack:
 - Express
 - MongoDB
 
+Project Duration: 2 Months
 Project Start Date: 10 June 2026
 
-Week 1 Goals:
-- Authentication
-- JWT Security
-- Role Based Access
+Project Modules:
 
-## Payroll Module
+### Employee Management
+- Employee CRUD Operations
+- Employee Search by Department
+- Salary Filtering
 
-Features:
-- Payroll data model
-- Employee salary tracking
-- Bonus and deduction management
-- Net salary calculation
+### Payroll Management
+- Payroll Data Model
+- Salary Tracking
+- Bonus and Deduction Management
+- Net Salary Calculation
+
+### Security Features
+- JWT Authentication
+- Protected Routes
+- Role Based Access Control
+
+## Future Enhancements
+
+- React Frontend Dashboard
+- Employee Profile Management
+- Attendance Tracking
+- Payroll Reports
+- Admin Dashboard Analytics
 
 ## Authentication API
 
