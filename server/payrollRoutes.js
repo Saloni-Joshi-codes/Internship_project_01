@@ -3,10 +3,12 @@ const router = express.Router();
 
 const {
     getPayrolls,
-    createPayroll
+    createPayroll,
+    updatePayroll
 } = require("./payrollController");
 
 router.get("/", getPayrolls);
 router.post("/", createPayroll);
+router.put("/:employeeId", updatePayroll);
 
 module.exports = router;
