@@ -31,8 +31,29 @@ const updatePayroll = (req, res) => {
     });
 };
 
+const deletePayroll = (req, res) => {
+    const { employeeId } = req.params;
+
+    const index = payrolls.findIndex(
+        (p) => p.employeeId === employeeId
+    );
+
+    if (index === -1) {
+        return res.status(404).json({
+            message: "Payroll record not found"
+        });
+    }
+
+    payrolls.splice(index, 1);
+
+    res.json({
+        message: "Payroll record deleted successfully"
+    });
+};
+
 module.exports = {
     getPayrolls,
     createPayroll,
-    updatePayroll
+    updatePayroll,
+    deletePayroll
 };
