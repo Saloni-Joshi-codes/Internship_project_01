@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 function Dashboard() {
   return (
     <div style={{ padding: "30px" }}>
@@ -19,8 +20,14 @@ function Dashboard() {
             width: "200px",
           }}
         >
-          <h3>Employees</h3>
-          <p>Total Employees</p>
+          <Link
+          to="/employees"
+          style={{ textDecoration: "none", color: "white" }}
+>
+         <h3>Employees</h3>
+        <p>Total Employees</p>
+        </Link>
+        
         </div>
 
         <div
@@ -31,8 +38,14 @@ function Dashboard() {
             width: "200px",
           }}
         >
-          <h3>Payroll</h3>
-          <p>Salary Records</p>
+        <Link
+        to="/payroll"
+        style={{ textDecoration: "none", color: "white" }}
+>
+        <h3>Payroll</h3>
+        <p>Salary Records</p>
+        </Link>
+    
         </div>
 
         <div
@@ -43,8 +56,14 @@ function Dashboard() {
             width: "200px",
           }}
         >
-          <h3>Reports</h3>
-          <p>Monthly Summary</p>
+          <Link
+        to="/reports"
+        style={{ textDecoration: "none", color: "white" }}
+>
+       <h3>Reports</h3>
+       <p>Monthly Summary</p>
+</Link>
+        
         </div>
       </div>
     </div>
