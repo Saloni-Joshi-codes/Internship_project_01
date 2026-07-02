@@ -30,6 +30,10 @@ function addEmployee() {
   setSalary("");
   setShowForm(false);
 }
+function deleteEmployee(id) {
+  const updatedEmployees = employees.filter((emp) => emp.id !== id);
+  setEmployees(updatedEmployees);
+}
 const filteredEmployees = employees.filter((emp) =>
   emp.name.toLowerCase().includes(search.toLowerCase())
 );
@@ -79,6 +83,7 @@ const filteredEmployees = employees.filter((emp) =>
             <th>Name</th>
             <th>Department</th>
             <th>Salary</th>
+            <th>Action</th>
           </tr>
         </thead>
 
@@ -89,6 +94,9 @@ const filteredEmployees = employees.filter((emp) =>
         <td>{emp.name}</td>
         <td>{emp.department}</td>
         <td>₹{emp.salary}</td>
+        <td>
+          <button onClick={() => deleteEmployee(emp.id)}>Delete</button>
+        </td>
         </tr>
         ))}
         </tbody>
