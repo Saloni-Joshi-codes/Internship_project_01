@@ -1,4 +1,6 @@
+import { useNavigate } from "react-router-dom";
 function Login() {
+  const navigate = useNavigate();
   return (
     <div style={{ textAlign: "center", marginTop: "80px" }}>
       <h1>Employee Payroll System</h1>
@@ -32,6 +34,7 @@ function Login() {
             padding: "10px",
             cursor: "pointer"
           }}
+          onClick={() => navigate("/employees")}
         >
           Login
         </button>
